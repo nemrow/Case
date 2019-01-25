@@ -70,6 +70,23 @@
     strictEqual(output, 'The 12 oz. drink was cold');
   });
 
+  module('Base');
+  test('basic sentence', function() {
+    var output = Case.base('He walked in. "hi," he said! she replied, "Yes?" "oh, nevermind."');
+    strictEqual(output, 'he walked in. "hi," he said! she replied, "yes?" "oh, nevermind."');
+  });
+
+  test('basic sentence with proper words', function() {
+    var output = Case.base('He walked in to California. "hi," he said! she replied, "capital?" "oh, nevermind."', ["California", "Capital"]);
+    strictEqual(output, 'he walked in to California. "hi," he said! she replied, "Capital?" "oh, nevermind."');
+  });
+
+  module('Whitelisted Period Words');
+  test('whitelisted period words', function() {
+    var output = Case.sentence('the 12 oz. drink was cold', null, ["oz"]);
+    strictEqual(output, 'The 12 oz. drink was cold');
+  });
+
   module('flip');
   flip('low/high', 'TEST THIS', 'test this');
   flip('mixed', "Test This", "tEST tHIS");
@@ -150,13 +167,14 @@
     equal(Case.capital("STOP!"), "Stop!");
     equal(Case.upper("'quote'"), "'QUOTE'");
     equal(Case.lower('"Quotes"'), '"quotes"');
+    equal(Case.base('"Quotes"'), '"quotes"');
 
     // except when it's a banned symbol
     equal(Case.constant("-30"), "_30");
     equal(Case.snake('STOP!'), "stop");
   });
 
-  test('upper, lower, capital extra arguments', function() {
+  test('upper, lower, capital, base extra arguments', function() {
     equal(Case.lower('FOO-BAR', '.'), 'foo.bar');
     equal(Case.upper('Foo? Bar.', '-'), 'FOO-BAR');
     equal(Case.capital("don'tSpeak", '-'), "Don't-Speak");
@@ -177,6 +195,7 @@
     equal(Case.capital(''), '');
     equal(Case.pascal(''), '');
     equal(Case.sentence(''), '');
+    equal(Case.base(''), '');
   });
 
   test('#22 - extra args to Case.of and to[Type]Case', function() {
@@ -193,6 +212,7 @@
     equal(Case.sentence(null), '', "empty should be empty string");
     equal(Case.capital(false), 'False');
     equal(Case.upper(true), 'TRUE');
+    equal(Case.base(true), 'true');
     equal(Case.pascal({}), 'ObjectObject', "should strip brackets and space from ugly default toString");
     equal(Case.snake([]), '', "javascript is weird, but []+''=''");
     equal(Case.constant(0), '0');

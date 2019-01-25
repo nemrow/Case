@@ -137,6 +137,17 @@
                 return i > 0 && i < s.lastIndexOf(' ') ? _.low.call(small) : small;
             });
         },
+        base: function(s, names) {
+            s = Case.lower(s);
+
+            if (names) {
+                names.forEach(function(name) {
+                    s = s.replace(new RegExp('\\b'+Case.lower(name)+'\\b', "g"), name);
+                });
+            }
+
+            return s;
+        },
         sentence: function(s, names, whitelistedHardStops) {
             s = Case.lower(s).replace(re.sentence, function(m, prelude, letter) {
                 return prelude + _.up.call(letter);
