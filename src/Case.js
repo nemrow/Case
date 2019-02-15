@@ -11,7 +11,7 @@
     basicSymbols = unicodes('20-26,28-2F,3A-40,5B-60,7B-7E,A0-BF,D7,F7', '00'),
     baseLowerCase = 'a-z'+unicodes('DF-F6,F8-FF', '00'),
     baseUpperCase = 'A-Z'+unicodes('C0-D6,D8-DE', '00'),
-    improperInTitle = 'A|An|And|As|At|But|By|En|For|If|In|Of|On|Or|The|To|Vs?\\.?|Via',
+    improperInTitle = 'A|An|And|As|At|But|By|En|For|If|In|Of|On|Or|The|To|Vs?\\.?|Via|With',
     regexps = function(symbols, lowers, uppers, impropers) {
         symbols = symbols || basicSymbols;
         lowers = lowers || baseLowerCase;
