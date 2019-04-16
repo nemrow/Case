@@ -16,7 +16,8 @@
     "constant",
     "flip",
     "capitalization",
-    "converter"
+    "converter",
+    "console"
   ],
   "author": {
     "name": "Nathan Bubna",
