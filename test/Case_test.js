@@ -237,4 +237,8 @@
     equal('thisIsAPunk'.replace(re.relax, Case._.relax), 'this Is A Punk', 'should put space before words');
   });
 
+  test('#26 - multi-langauge support', function () {
+    equal(Case.title('eieren met spek', { language: "nl-nl" }), "Eieren met Spek");
+  });
+
 }());
