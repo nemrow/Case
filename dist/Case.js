@@ -1,4 +1,4 @@
-/*! Case - v1.5.5 - 2019-04-15
+/*! Case - v1.5.5 - 2019-05-09
 * Copyright (c) 2019 Nathan Bubna; Licensed MIT, GPL */
 (function() {
     "use strict";
@@ -18,6 +18,10 @@
           break;
         case "nl-nl":
           improperInTitle = 'En|Of|Met';
+          break;
+        case "fr-fr":
+        case "fr-ca":
+          improperInTitle = "Et|En|Un|Une|Avec|A|Le|Les|La|De|À|Au|Sans|Des|Du|Aux|Ou|Où|Par|L'\\S+|D'\\S+";
           break;
         default:
           improperInTitle = improperInTitleDefualts;

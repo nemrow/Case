@@ -21,6 +21,10 @@
         case "nl-nl":
           improperInTitle = 'En|Of|Met';
           break;
+        case "fr-fr":
+        case "fr-ca":
+          improperInTitle = "Et|En|Un|Une|Avec|A|Le|Les|La|De|À|Au|Sans|Des|Du|Aux|Ou|Où|Par|L'\\S+|D'\\S+";
+          break;
         default:
           improperInTitle = improperInTitleDefualts;
       }
