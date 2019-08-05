@@ -241,7 +241,8 @@
     equal(Case.title('eieren met spek', { language: "nl-nl" }), "Eieren met Spek");
     equal(Case.title('bacon et oeufs', { language: "fr-ca" }), "Bacon et Oeufs");
     equal(Case.title('bacon et oeufs', { language: "fr-fr" }), "Bacon et Oeufs");
-    equal(Case.title("je veux de l'argent de poche", { language: "fr-fr" }), "Je Veux de l'argent de Poche");
+    equal(Case.title('hamburguesas y papas fritas', { language: "es-es" }), "Hamburguesas y Papas Fritas");
+    equal(Case.title('hamburguesas y papas fritas', { language: "es-co" }), "Hamburguesas y Papas Fritas");
   });
 
 }());

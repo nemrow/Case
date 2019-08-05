@@ -1,4 +1,4 @@
-/*! Case - v1.5.5 - 2019-05-09
+/*! Case - v1.5.5 - 2019-08-04
 * Copyright (c) 2019 Nathan Bubna; Licensed MIT, GPL */
 (function() {
     "use strict";
@@ -22,6 +22,10 @@
         case "fr-fr":
         case "fr-ca":
           improperInTitle = "Et|En|Un|Une|Avec|A|Le|Les|La|De|À|Au|Sans|Des|Du|Aux|Ou|Où|Par|L'\\S+|D'\\S+";
+          break;
+        case "es-es":
+        case "es-co":
+          improperInTitle = "Y|Con|A|La|De|En|Del|E|Tu|Por|Sin|Al|O|Tus|Por|Para|Se|Su|Sus|Lo|Las|Los|El";
           break;
         default:
           improperInTitle = improperInTitleDefualts;
