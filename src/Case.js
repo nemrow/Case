@@ -25,8 +25,13 @@
         case "fr-ca":
           improperInTitle = "Et|En|Un|Une|Avec|A|Le|Les|La|De|À|Au|Sans|Des|Du|Aux|Ou|Où|Par|L'\\S+|D'\\S+";
           break;
-        case "es-es":
+        case "es-ar":
+        case "es-cl":
         case "es-co":
+        case "es-mx":
+        case "es-pr":
+        case "es-es":
+        case "es-uy":
           improperInTitle = "Y|Con|A|La|De|En|Del|E|Tu|Por|Sin|Al|O|Tus|Por|Para|Se|Su|Sus|Lo|Las|Los|El";
           break;
         default:
